@@ -1,0 +1,48 @@
+html{
+    font-size: 16px;
+}
+
+.site-largura{
+    width: 80vw;
+    margin: 0 auto;
+}
+
+nav{
+    z-index: 10;
+}
+
+.menu-topo{
+    background: rgb(0, 160, 251);
+    padding-top: 1vh;
+    box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.5);
+}
+
+.menu{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    height: 6vh;
+}
+
+.menu-topo-centro{
+    flex: 1;
+    text-align: center;
+}
+
+.logo{
+    font-size: 4em;
+    font-family: 'Great Vibes';
+    color: white;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px;
+    padding: 0;
+}
+
+.menu-topo-esquerda{
+    flex: 0;
+}
+
+.menu-topo-direita{
+    flex: 0;
+}
+
