@@ -2,26 +2,32 @@ html{
     font-size: 16px;
 }
 
+h2{
+    font-family: 'Roboto', sans-serif;
+}
+
+p{
+    font-family: 'Roboto Slab', serif;
+}
+
 .site-largura{
     width: 80vw;
     margin: 0 auto;
-}
-
-nav{
-    z-index: 10;
 }
 
 .menu-topo{
     background: rgb(0, 160, 251);
     padding-top: 1vh;
     box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    position: sticky;
 }
 
 .menu{
     display: flex;
     flex-wrap: wrap;
     padding: 0;
-    height: 6vh;
+    height: 55px;
 }
 
 .menu-topo-centro{
