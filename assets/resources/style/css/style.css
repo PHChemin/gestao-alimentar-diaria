@@ -1,0 +1,39 @@
+html{
+    font-size: 16px;
+}
+
+h2{
+    font-family: 'Roboto', sans-serif;
+}
+
+p{
+    font-family: 'Roboto Slab', serif;
+}
+
+h3{
+    font-size: 2rem;
+    font-family: 'Great Vibes';
+}
+
+.logo{
+    font-size: 4rem;
+    font-family: 'Great Vibes';
+    color: white;
+    text-shadow: -3px 3px 4px black;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px;
+}
+
+.menu{
+    font-family: 'Great Vibes';
+    font-size: 4rem;
+}
+
+.frame-exemplo{
+    border-radius: 20px;
+}
+
+.cal-exemplo{
+    font-family: 'Roboto Slab', serif;
+    font-size: 0.75rem;
+}
