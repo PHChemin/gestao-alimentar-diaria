@@ -24,6 +24,14 @@ h3{
     -webkit-text-stroke-width: 1px;
 }
 
+.titulo-topo {
+    font-size: 4rem;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 2px;
+}
+
 .menu{
     font-family: 'Great Vibes';
     font-size: 4rem;

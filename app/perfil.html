@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="referrer" content="never">
+        <meta name="referrer" content="no-referrer">
+        <script src="https://kit.fontawesome.com/4bacb5fb56.js" crossorigin="anonymous"></script>       
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+        <link href="../assets/resources/icons/bootstrap-icons.min.css" rel="stylesheet">
+        <link href="../assets/resources/style/css/custom.css" rel="stylesheet">
+        <link href="../assets/resources/style/css/style.css" rel="stylesheet"> 
+        <title>Perfil GAD</title>
+    </head>
+    <body>
+        <header class="overflow-x-hidden shadow">
+            <nav class="navbar bg-primary sticky-md-top">
+                <div class="conteiner text-center">
+                  <div class="row align-items-center">
+                    <div class="col">
+                        <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                          <i class="bi bi-list text-dark fs-2"></i>
+                        </a>
+                        
+                        <div class="offcanvas offcanvas-start bg-primary" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                          <div class="offcanvas-header">
+                            <h5 class="offcanvas-title menu text-light" id="offcanvasExampleLabel">Menu</h5>
+                            <i class="bi bi-x-lg fs-1 fw-bold text-light" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></i>
+                          </div>
+                          <div class="offcanvas-body">
+                              <div class="itens">
+                                <a href="../index.html" class="text-start d-flex">
+                                  <i class="bi bi-star-fill fs-4 text-light me-3"></i>
+                                  <p class="fs-3 text-light text-decoration-none">Início</p>
+                                </a>
+                              </div>
+                              <div class="itens">
+                                <a href="./perfil.html" class="text-start d-flex">
+                                  <i class="bi bi-person-fill fs-4 text-light me-3"></i>
+                                  <p class="fs-3 text-light text-decoration-none">Meu Perfil</p>
+                                </a>
+                              </div>
+                              <div class="itens">
+                                <a href="" class="text-start d-flex">
+                                  <i class="bi bi-list-nested fs-4 text-light me-3"></i>
+                                  <p class="fs-3 text-light text-decoration-none">Minhas Refeições</p>
+                                </a>
+                              </div>
+                              <div class="itens">
+                                <a href="" class="text-start d-flex">
+                                  <i class="bi bi-patch-plus fs-4 text-light me-3"></i>
+                                  <p class="fs-3 text-light text-decoration-none">Adicionar Refeições</p>
+                                </a>
+                              </div>
+                              <div class="itens">
+                                <a href="" class="text-start d-flex">
+                                  <i class="bi bi-arrows-collapse-vertical fs-4 text-light me-3"></i>
+                                  <p class="fs-3 text-light text-decoration-none">Comparador</p>
+                                </a>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h1 class="logo">Gad</h1>
+                    </div>
+                    <div class="col">
+                    </div>
+                  </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="d-flex justify-content-center align-items-center mt-4">
+                <div class="titulo-topo fst-italic fw-medium">Meu Perfil</div>
+                <i class="bi bi-person-circle text-dark fs-1 ms-3"></i>
+            </div>
+            <div class="container">
+                <form class="row g-3 was-validated" novalidate>
+                    <div class="col-md-6">
+                      <label for="validationUsername" class="form-label fs-3">Usuário</label>
+                      <div class="input-group has-validation">
+                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                        <input value="PHChemin" type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputPassword" class="form-label fs-3">Senha</label>
+                        <input type="password" class="form-control" id="inputPassword" value="12345" readonly>
+                    </div>
+                    <div class="col-md-7 col-sm-6 mt-4">
+                        <label for="validationName" class="form-label fs-3">Nome</label>
+                        <input type="text" class="form-control" id="validationName" required>
+                        <div class="invalid-feedback">
+                          Por favor escreva seu Nome.
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-6 mt-4">
+                        <label for="validationDate" class="form-label fs-3">Data de Nascimento</label>
+                        <input type="text" class="form-control" id="validationDate" placeholder="dd/mm/aaaa" required>
+                        <div class="invalid-feedback">
+                            Por favor escreva uma Data Válida.
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-4">
+                        <label for="validationHeight" class="form-label fs-3">Altura</label>
+                        <input placeholder="Em kilogramas (kg)" type="text" class="form-control" id="validationHeight" required>
+                        <div class="invalid-feedback">
+                            Por favor forneça uma Altura Válida.
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-4">
+                        <label for="validationWheight" class="form-label fs-3">Peso</label>
+                        <input placeholder="Em kilogramas (kg)" type="text" class="form-control" id="validationWeight" required>
+                        <div class="invalid-feedback">
+                            Por favor forneça um Peso Válido.
+                        </div>
+                    </div>
+                    <div class="col-md-3 mt-4">
+                        <label for="validationCep" class="form-label fs-3">CEP</label>
+                        <input type="text" class="form-control" id="validationCep" required>
+                        <div class="invalid-feedback">
+                          Por favor escreva um CEP Válido.
+                        </div>
+                      </div>
+                    <div class="col-md-6 mt-4">
+                      <label for="validationCity" class="form-label fs-3">Cidade</label>
+                      <input type="text" class="form-control" id="validationCity">
+                    </div>
+                    <div class="col-md-3 mt-4">
+                      <label for="validationState" class="form-label fs-3">Estado</label>
+                      <select class="form-select" id="validationState">
+                        <option selected disabled value=""></option>
+                        <option>PR</option>
+                        <option>SC</option>
+                        <option>RS</option>
+                      </select>
+                    </div>
+                    <div class="col-12 text-center mt-3 mb-5">
+                      <button class="btn btn-lg btn-danger text-light" type="submit">Salvar</button>
+                    </div>
+                  </form>
+              </div>
+        </main>
+        <footer class="container-fluid text-light bg-primary">
+            <div class="row justify-content-center pt-3">
+              <section class="col-6 col-md-5">
+                <h5 class="text-light">Informações do Projeto</h5>
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a class="text-light" href="https://github.com/PHChemin/gestao-alimentar-diaria" target="_blank">GitHub</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="text-light" href="https://www.figma.com/file/ZOAModlERTeb9CxlkPv9fO/GestaoAlimentarDiaria-GAD?type=design&node-id=9-25&mode=design&t=m567cAZU6UhNVRYm-0" target="_blank">Protótipo</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="text-light" href=mailto:chemin_pedro@outlook.com >Email</a>
+                  </li>
+                </ul>
+              </section>
+              <section class="col-6 col-md-5">
+                <h5 class="text-light">Informações do Criador</h5>
+                <p class="text-light">Pedro Henrique Chemin Prado</p>
+                <ul class="nav flex-column">
+                  <li class="nav-item">
+                    <a class="text-light" href=mailto:chemin_pedro@outlook.com >Email</a>
+                  </li>
+                </ul>
+              </section>
+            </div>
+          </footer>
+        <script src="../assets/resources/script/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

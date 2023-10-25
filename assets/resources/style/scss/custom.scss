@@ -10,6 +10,8 @@ $secondary:     #E7E7E7;
 $danger:        #FF4444;
 $success:       #07BD45;
 $input-border-color: #00A0FB;
+$form-feedback-valid-color:         $primary;
+$form-valid-color: $primary;
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "../../../../node_modules/bootstrap/scss/variables";
