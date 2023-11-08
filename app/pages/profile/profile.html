@@ -8,9 +8,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-        <link href="../assets/resources/icons/bootstrap-icons.min.css" rel="stylesheet">
-        <link href="../assets/resources/style/css/custom.css" rel="stylesheet">
-        <link href="../assets/resources/style/css/style.css" rel="stylesheet"> 
+        <link href="../../../assets/resources/icons/bootstrap-icons.min.css" rel="stylesheet">
+        <link href="../../../assets/resources/style/css/custom.css" rel="stylesheet">
+        <link href="../../../assets/resources/style/css/style.css" rel="stylesheet"> 
         <title>Perfil GAD</title>
     </head>
     <body>
@@ -76,61 +76,66 @@
                 <div class="titulo-topo fst-italic fw-medium">Meu Perfil</div>
                 <i class="bi bi-person-circle text-dark fs-1 ms-3"></i>
             </div>
+            <div class="container text-end">
+              <button id="clearForm" class="btn btn-sm btn-primary text-light" type="button">Limpar</button>
+            </div>
             <div class="container">
-                <form class="row g-3 was-validated" novalidate>
+                <form id="myProfileForm" class="row g-3">
                     <div class="col-md-6">
-                      <label for="validationUsername" class="form-label fs-3">Usuário</label>
-                      <div class="input-group has-validation">
-                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input value="PHChemin" type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                      <label for="input-user" class="form-label fs-3">Usuário</label>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">@</span>
+                        <input id="input-user" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="inputPassword" class="form-label fs-3">Senha</label>
-                        <input type="password" class="form-control" id="inputPassword" value="12345" readonly>
+                        <label for="input-password" class="form-label fs-3">Senha</label>
+                        <input type="password" class="form-control" id="input-password" value="12345">
                     </div>
-                    <div class="col-md-7 col-sm-6 mt-4">
-                        <label for="validationName" class="form-label fs-3">Nome</label>
-                        <input type="text" class="form-control" id="validationName" required>
+                    <div class="col-md-6 col-sm-12 mt-4">
+                        <label for="input-name" class="form-label fs-3">Nome</label>
+                        <input type="text" class="form-control" id="input-name" autofocus>
                         <div class="invalid-feedback">
                           Por favor escreva seu Nome.
                         </div>
                     </div>
-                    <div class="col-md-5 col-sm-6 mt-4">
-                        <label for="validationDate" class="form-label fs-3">Data de Nascimento</label>
-                        <input type="text" class="form-control" id="validationDate" placeholder="dd/mm/aaaa" required>
-                        <div class="invalid-feedback">
-                            Por favor escreva uma Data Válida.
-                        </div>
+                    <div class="col-md-3 col-sm-6 mt-4">
+                      <label for="input-date" class="form-label fs-3">Data de Nascimento</label>
+                      <input type="date" class="form-control" id="input-date" placeholder="dd/mm/aaaa">
+                      <div id="emailHelp" class="form-text">Clique no calendário ao lado.</div>
+                  </div>
+                    <div class="col-md-3 col-sm-6 mt-4">
+                        <label for="input-age" class="form-label fs-3">Idade</label>
+                        <input type="number" class="form-control" id="input-age" placeholder="Anos" readonly>
                     </div>
                     <div class="col-md-6 mt-4">
-                        <label for="validationHeight" class="form-label fs-3">Altura</label>
-                        <input placeholder="Em kilogramas (kg)" type="text" class="form-control" id="validationHeight" required>
+                        <label for="input-height" class="form-label fs-3">Altura</label>
+                        <input placeholder="Em centímetros (cm)" type="number" class="form-control" id="input-height">
                         <div class="invalid-feedback">
                             Por favor forneça uma Altura Válida.
                         </div>
                     </div>
                     <div class="col-md-6 mt-4">
-                        <label for="validationWheight" class="form-label fs-3">Peso</label>
-                        <input placeholder="Em kilogramas (kg)" type="text" class="form-control" id="validationWeight" required>
+                        <label for="input-wheight" class="form-label fs-3">Peso</label>
+                        <input placeholder="Em kilogramas (kg)" type="number" class="form-control" id="input-wheight">
                         <div class="invalid-feedback">
                             Por favor forneça um Peso Válido.
                         </div>
                     </div>
                     <div class="col-md-3 mt-4">
-                        <label for="validationCep" class="form-label fs-3">CEP</label>
-                        <input type="text" class="form-control" id="validationCep" required>
+                        <label for="input-cep" class="form-label fs-3">CEP</label>
+                        <input type="number" class="form-control" id="input-cep">
                         <div class="invalid-feedback">
                           Por favor escreva um CEP Válido.
                         </div>
                       </div>
                     <div class="col-md-6 mt-4">
-                      <label for="validationCity" class="form-label fs-3">Cidade</label>
-                      <input type="text" class="form-control" id="validationCity">
+                      <label for="input-city" class="form-label fs-3">Cidade</label>
+                      <input type="text" class="form-control" id="input-city">
                     </div>
                     <div class="col-md-3 mt-4">
-                      <label for="validationState" class="form-label fs-3">Estado</label>
-                      <select class="form-select" id="validationState">
+                      <label for="input-state" class="form-label fs-3">Estado</label>
+                      <select class="form-select" id="input-state">
                         <option selected disabled value=""></option>
                         <option>PR</option>
                         <option>SC</option>
@@ -138,10 +143,11 @@
                       </select>
                     </div>
                     <div class="col-12 text-center mt-3 mb-5">
-                      <button class="btn btn-lg btn-danger text-light" type="submit">Salvar</button>
+                      <button id="saveForm" class="btn btn-lg btn-danger text-light" type="submit">Salvar</button>
                     </div>
                   </form>
               </div>
+              <div id="userData" class="container"></div>
         </main>
         <footer class="container-fluid text-light bg-primary">
             <div class="row justify-content-center pt-3">
@@ -170,6 +176,7 @@
               </section>
             </div>
           </footer>
-        <script src="../assets/resources/script/bootstrap.bundle.min.js"></script>
+        <script src="../../../assets/resources/script/bootstrap.bundle.min.js"></script>
+        <script type="module" src="./profile.js"></script>
     </body>
 </html>

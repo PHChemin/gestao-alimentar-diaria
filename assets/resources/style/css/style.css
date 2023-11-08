@@ -45,3 +45,7 @@ h3{
     font-family: 'Roboto Slab', serif;
     font-size: 0.75rem;
 }
+
+.bloco {
+    border-radius: 60px 0px;
+}
