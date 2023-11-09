@@ -80,13 +80,14 @@
               <button id="clearForm" class="btn btn-sm btn-primary text-light" type="button">Limpar</button>
             </div>
             <div class="container">
-                <form id="myProfileForm" class="row g-3">
+                <form id="my-profile-form" class="row g-3 needs-validation" novalidate>
                     <div class="col-md-6">
                       <label for="input-user" class="form-label fs-3">Usuário</label>
                       <div class="input-group mb-3">
                         <span class="input-group-text" id="basic-addon1">@</span>
-                        <input id="input-user" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                        <input id="input-user" type="text" class="form-control" value="User1" aria-label="Username" aria-describedby="basic-addon1" readonly>
                       </div>
+                      <div class="invalid-feedback">Preencha corretamente</div>
                     </div>
                     <div class="col-md-6">
                         <label for="input-password" class="form-label fs-3">Senha</label>
@@ -94,15 +95,13 @@
                     </div>
                     <div class="col-md-6 col-sm-12 mt-4">
                         <label for="input-name" class="form-label fs-3">Nome</label>
-                        <input type="text" class="form-control" id="input-name" autofocus>
-                        <div class="invalid-feedback">
-                          Por favor escreva seu Nome.
-                        </div>
+                        <input type="text" class="form-control" id="input-name" minlength="1" autofocus>
+                        <div class="invalid-feedback"> Por favor preencha o nome corretamente.</div>
                     </div>
                     <div class="col-md-3 col-sm-6 mt-4">
                       <label for="input-date" class="form-label fs-3">Data de Nascimento</label>
-                      <input type="date" class="form-control" id="input-date" placeholder="dd/mm/aaaa">
-                      <div id="emailHelp" class="form-text">Clique no calendário ao lado.</div>
+                      <input type="date" class="form-control" id="input-date" placeholder="dd/mm/aaaa" min="1920-01-01" max="2023-01-01">
+                      <div id="dateHelp" class="form-text">Clique no calendário ao lado.</div>
                   </div>
                     <div class="col-md-3 col-sm-6 mt-4">
                         <label for="input-age" class="form-label fs-3">Idade</label>
@@ -110,24 +109,18 @@
                     </div>
                     <div class="col-md-6 mt-4">
                         <label for="input-height" class="form-label fs-3">Altura</label>
-                        <input placeholder="Em centímetros (cm)" type="number" class="form-control" id="input-height">
-                        <div class="invalid-feedback">
-                            Por favor forneça uma Altura Válida.
-                        </div>
+                        <input placeholder="Em centímetros (cm)" type="number" class="form-control" id="input-height" min="1" max="300">
+                        <div class="invalid-feedback"> Por favor infome uma altura dentro do limite (1-300 cm).</div>
                     </div>
                     <div class="col-md-6 mt-4">
                         <label for="input-wheight" class="form-label fs-3">Peso</label>
                         <input placeholder="Em kilogramas (kg)" type="number" class="form-control" id="input-wheight">
-                        <div class="invalid-feedback">
-                            Por favor forneça um Peso Válido.
-                        </div>
+                        <div class="invalid-feedback">Por favor infome um peso dentro do limite (1-800 kg).</div>
                     </div>
                     <div class="col-md-3 mt-4">
                         <label for="input-cep" class="form-label fs-3">CEP</label>
-                        <input type="number" class="form-control" id="input-cep">
-                        <div class="invalid-feedback">
-                          Por favor escreva um CEP Válido.
-                        </div>
+                        <input type="text" class="form-control" id="input-cep" pattern="\d{5}-\d{3}" placeholder="00000-000">
+                        <div class="invalid-feedback">Por favor escreva um CEP Válido.</div>
                       </div>
                     <div class="col-md-6 mt-4">
                       <label for="input-city" class="form-label fs-3">Cidade</label>
@@ -143,7 +136,7 @@
                       </select>
                     </div>
                     <div class="col-12 text-center mt-3 mb-5">
-                      <button id="saveForm" class="btn btn-lg btn-danger text-light" type="submit">Salvar</button>
+                      <button id="save-form" class="btn btn-lg btn-danger text-light" type="submit">Salvar</button>
                     </div>
                   </form>
               </div>
