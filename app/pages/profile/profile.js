@@ -3,6 +3,9 @@ import { User } from "../../model/user.js";
 let main = function() {
     document.addEventListener("DOMContentLoaded", function () {
 
+        // Carregando o Username e Senha
+        
+
         // First Step Validação Nome
         document.getElementById("input-name").addEventListener("input", function(validationName) {
             let inputValue = document.getElementById("input-name").value;
@@ -96,9 +99,6 @@ let main = function() {
 
               // TODO Pegar a cidade e estado da API Via CEP
 
-            
-            // Instânciando a Classe User
-            let user1 = new User(username, password, name, birthday, age, height, wheight, cep, city, state);
 
 
             // Checando a validade das informações
@@ -117,7 +117,7 @@ let main = function() {
                     trigger: "focus",
                 });
                 popover.show();
-            } else {
+            }else {
                 let existingPopover = bootstrap.Popover.getInstance(saveButton);
                 if (existingPopover) {
                     existingPopover.dispose();
@@ -125,22 +125,25 @@ let main = function() {
 
                 // TODO exibir as informações nos inputs
 
+                // Instânciando a Classe User
+                let user1 = new User(username, password, name, birthday, age, height, wheight, cep, city, state);
+
                 // Selecionando a Div userData
                 let userData = document.querySelector("#userData");
 
                 // Utilizando o innerHTML para adicionar a div
                 userData.innerHTML = `
                     <h2> Dados do Usuário </h2>
-                    <p>Username: ${user1.getUsername()}</p>
-                    <p>Password: ${user1.getPassword()}</p>
-                    <p>Nome: ${user1.getName()}</p>
-                    <p>Data de Nascimento: ${user1.getBirthday()}</p>
-                    <p>Idade: ${user1.getAge()}</p>
-                    <p>Altura: ${user1.getHeight()}</p>
-                    <p>Peso: ${user1.getWheight()}</p>
-                    <p>CEP: ${user1.getCep()}</p>
-                    <p>Cidade: ${user1.getCity()}</p>
-                    <p>Estado: ${user1.getState()}</p>
+                    <p>Username: ${user1.username()}</p>
+                    <p>Password: ${user1.password()}</p>
+                    <p>Nome: ${user1.name()}</p>
+                    <p>Data de Nascimento: ${user1.birthday()}</p>
+                    <p>Idade: ${user1.age()}</p>
+                    <p>Altura: ${user1.height()}</p>
+                    <p>Peso: ${user1.wheight()}</p>
+                    <p>CEP: ${user1.cep()}</p>
+                    <p>Cidade: ${user1.city()}</p>
+                    <p>Estado: ${user1.state()}</p>
                 `;
             }
         });

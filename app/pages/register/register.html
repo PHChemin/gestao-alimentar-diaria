@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="referrer" content="never">
+        <meta name="referrer" content="no-referrer">
+        <script src="https://kit.fontawesome.com/4bacb5fb56.js" crossorigin="anonymous"></script>       
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+        <link href="../../../assets/resources/icons/bootstrap-icons.min.css" rel="stylesheet">
+        <link href="../../../assets/resources/style/css/custom.css" rel="stylesheet">
+        <link href="../../../assets/resources/style/css/style.css" rel="stylesheet"> 
+        <title>Registro Gad</title>
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <div class="border border-primary border-2 bloco container mt-5">
+                    <div class="container w-75">
+                        <div class="text-center">
+                            <div class="logo mt-4 mb-2 border-bottom border-2 border-primary">Gad</div>
+                        </div>
+                        <h2 class="text-center mt-3 mb-3">Bem-vindo ao GAD!</h2>
+                        <form id="register-form">
+                            <div class="mb-3">
+                                <label for="input-username" class="form-label fs-5">Registre-se</label>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">@</span>
+                                    <input id="input-username" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" placeholder="Usuário">
+                                    <div class="invalid-feedback">Apenas letras (sem números, caracteres especiais ou espaços) e pelo menos 4 caracteres.</div>
+                                </div>
+                            </div>
+                            <div class="mb-3 mt-2">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">@</span>
+                                    <input id="input-password" type="password" class="form-control" aria-label="Username" aria-describedby="basic-addon1" placeholder="Senha">
+                                    <div class="invalid-feedback">A senha deve conter pelo menos 4 caracteres (letras ou números), sendo pelo menos 1 Maiúscula.</div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">@</span>
+                                    <input id="input-confirm-password" type="password" class="form-control" aria-label="Username" aria-describedby="basic-addon1" placeholder="Confirmar Senha">
+                                    <div class="invalid-feedback">As senhas precisam ser iguais!</div>
+                                </div>
+                            </div>
+                            <div class="text-end mt-3 mb-3">
+                                <button id="register-button" type="submit" class="btn btn-lg btn-danger text-light">Registrar</button>
+                            </div>
+                            <p class="mb-5">Já possui cadastro? Entre clicando <a href="../login/login.html">Aqui!</a></p>
+                        </form>
+                    </div>
+                </div>
+                <div id="userData" class="container"></div>
+            </div>
+        </main>
+        <script src="../../../assets/resources/script/bootstrap.bundle.min.js"></script>
+        <script type="module" src="./register.js"></script>
+    </body>
+</html>

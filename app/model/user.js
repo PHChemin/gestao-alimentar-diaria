@@ -12,43 +12,43 @@ export class User {
         this._state = state;
     }
 
-    getUsername() {
+    username() {
         return this._username;
     }
 
-    getPassword() {
+    password() {
         return this._password;
     }
 
-    getName() {
+    name() {
         return this._name;
     }
 
-    getBirthday() {
+    birthday() {
         return this._birthday;
     }
 
-    getAge() {
+    age() {
         return this._age;
     }
 
-    getHeight() {
+    height() {
         return this._height;
     }
 
-    getWheight() {
+    wheight() {
         return this._wheight;
     }
 
-    getCep() {
+    cep() {
         return this._cep;
     }
 
-    getCity() {
+    city() {
         return this._city;
     }
 
-    getState() {
+    state() {
         return this._state;
     }
 }

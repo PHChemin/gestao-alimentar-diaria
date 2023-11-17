@@ -47,5 +47,23 @@ h3{
 }
 
 .bloco {
+    width: 90vw;
     border-radius: 60px 0px;
+    box-shadow: 0 3px 10px #00A0FB;
+    
+}
+
+
+@media (min-width: 764px) {
+    .bloco {
+        width: 70vw;
+    }
+    
+}
+
+@media (min-width: 992px) {
+    .bloco {
+        width: 40vw;
+    }
+    
 }
