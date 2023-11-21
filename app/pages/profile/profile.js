@@ -1,10 +1,17 @@
 import { User } from "../../model/user.js";
+import { UserService } from "../../service/user.service.js";
 
 let main = function() {
     document.addEventListener("DOMContentLoaded", function () {
 
-        // Carregando o Username e Senha
-        
+        // Carregando o Usuário Salvo Anteriormente
+        let savedUser = localStorage.getItem("users");
+        let user = JSON.parse(savedUser);
+
+        // Colocando usuário e senha no input
+        document.getElementById("input-user").value = user[0].username;
+        document.getElementById("input-password").value = user[0].password;    
+
 
         // First Step Validação Nome
         document.getElementById("input-name").addEventListener("input", function(validationName) {
@@ -68,8 +75,6 @@ let main = function() {
             event.preventDefault();
         
             // Salvando os Valores dos Inputs em Variáveis
-            let username = document.getElementById("input-user").value;
-            let password = document.getElementById("input-password").value;
             let name = document.getElementById("input-name").value;
             let inputDate = document.getElementById("input-date").value;
             let height = document.getElementById("input-height").value;
@@ -125,8 +130,18 @@ let main = function() {
 
                 // TODO exibir as informações nos inputs
 
-                // Instânciando a Classe User
-                let user1 = new User(username, password, name, birthday, age, height, wheight, cep, city, state);
+                // Atualizando a Classe User
+                user[0].name = name;
+                user[0].birthday = birthday;
+                user[0].age = age;
+                user[0].height = height;
+                user[0].wheight = wheight;
+                user[0].cep = cep;
+                user[0].city = city;
+                user[0].state = state;
+
+                // Salvando no local storage
+                localStorage.setItem("users", JSON.stringify(user));
 
                 // Selecionando a Div userData
                 let userData = document.querySelector("#userData");
@@ -134,16 +149,16 @@ let main = function() {
                 // Utilizando o innerHTML para adicionar a div
                 userData.innerHTML = `
                     <h2> Dados do Usuário </h2>
-                    <p>Username: ${user1.username()}</p>
-                    <p>Password: ${user1.password()}</p>
-                    <p>Nome: ${user1.name()}</p>
-                    <p>Data de Nascimento: ${user1.birthday()}</p>
-                    <p>Idade: ${user1.age()}</p>
-                    <p>Altura: ${user1.height()}</p>
-                    <p>Peso: ${user1.wheight()}</p>
-                    <p>CEP: ${user1.cep()}</p>
-                    <p>Cidade: ${user1.city()}</p>
-                    <p>Estado: ${user1.state()}</p>
+                    <p>Username: ${user[0].username}</p>
+                    <p>Password: ${user[0].password}</p>
+                    <p>Nome: ${user[0].name}</p>
+                    <p>Data de Nascimento: ${user[0].birthday}</p>
+                    <p>Idade: ${user[0].age}</p>
+                    <p>Altura: ${user[0].height}</p>
+                    <p>Peso: ${user[0].wheight}</p>
+                    <p>CEP: ${user[0].cep}</p>
+                    <p>Cidade: ${user[0].city}</p>
+                    <p>Estado: ${user[0].state}</p>
                 `;
             }
         });

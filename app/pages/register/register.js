@@ -1,4 +1,5 @@
 import { User } from "../../model/user.js";
+import { UserService } from "../../service/user.service.js";
 
 let main = function () {
     document.addEventListener("DOMContentLoaded", function (){
@@ -55,9 +56,6 @@ let main = function () {
     document.getElementById("register-form").addEventListener("submit", function(event){
         // Evitando que o formulário seja enviado
         event.preventDefault();
-
-        let username = document.getElementById("input-username").value;
-        let password = document.getElementById("input-password").value;
         
         // Checando a validade das informações
         let elementsInvalid = document.querySelectorAll(".is-invalid");
@@ -81,7 +79,18 @@ let main = function () {
                 existingPopover.dispose();
             }
 
-            let user1 = new User (username, password);
+            let username = document.getElementById("input-username").value;
+            let password = document.getElementById("input-password").value;
+            let user = new User (username,password);
+
+            // Instânciar o UserService
+            let userService = new UserService();
+
+            // Salvando o novo usuário no armazenamento local
+            userService.saveLocal(user);
+
+            // Redirecionando para o Perfil
+            window.location.href = "../profile/profile.html"
         }
     });
 };
