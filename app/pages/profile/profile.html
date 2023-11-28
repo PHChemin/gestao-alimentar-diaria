@@ -124,16 +124,18 @@
                       </div>
                     <div class="col-md-6 mt-4">
                       <label for="input-city" class="form-label fs-3">Cidade</label>
-                      <input type="text" class="form-control" id="input-city">
+                      <input type="text" class="form-control" id="input-city" readonly>
                     </div>
                     <div class="col-md-3 mt-4">
                       <label for="input-state" class="form-label fs-3">Estado</label>
-                      <select class="form-select" id="input-state">
-                        <option selected disabled value=""></option>
-                        <option>PR</option>
-                        <option>SC</option>
-                        <option>RS</option>
-                      </select>
+                      <input type="text" class="form-control" id="input-state" readonly>
+                    </div>
+                    <div class="col-12 col-sm-8 col-md-6 m-auto mt-3">
+                      <div id="sucessAlert" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
+                          <div class="text-center">
+                            Seu Perfil foi salvo com sucesso!
+                          </div>
+                      </div>
                     </div>
                     <div class="col-12 text-center mt-3 mb-5">
                       <button id="save-form" class="btn btn-lg btn-danger text-light" type="submit">Salvar</button>
@@ -170,6 +172,8 @@
             </div>
           </footer>
         <script src="../../../assets/resources/script/bootstrap.bundle.min.js"></script>
+        <script src="../../../assets/libraries/jquerry/jquery.min.js"></script>
+        <script src="../../../assets/libraries/jquerry/jquery.mask.min.js"></script>
         <script type="module" src="./profile.js"></script>
     </body>
 </html>

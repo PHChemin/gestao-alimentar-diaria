@@ -10,7 +10,19 @@ let main = function() {
 
         // Colocando usuário e senha no input
         document.getElementById("input-user").value = user[0].username;
-        document.getElementById("input-password").value = user[0].password;    
+        document.getElementById("input-password").value = user[0].password;
+
+        if (user && user.length > 0) {
+            // Carregando as informações salvas do usuário apenas se o usuário existir e houver informações
+            document.getElementById("input-name").value = user[0].name || '';
+            document.getElementById("input-user").value = user[0].username || '';
+            document.getElementById("input-age").value = user[0].age || '';
+            document.getElementById("input-height").value = user[0].height || '';
+            document.getElementById("input-wheight").value = user[0].wheight || '';
+            document.getElementById("input-cep").value = user[0].cep || '';
+            document.getElementById("input-city").value = user[0].city || '';
+            document.getElementById("input-state").value = user[0].state || '';
+        }
 
 
         // First Step Validação Nome
@@ -59,15 +71,26 @@ let main = function() {
             }
         });
 
-        // First Step Adicionando o "-" automaticamente ao CEP
-        document.getElementById("input-cep").addEventListener("input", function(event) {
+        // Utilizando o Plugin Mask do Jquery
+        $(document).ready(function(){
+            $('#input-cep').mask('00000-000');
+        });
+
+        // Validando se o CEP contém o número correto de caracteres
+        $('#input-cep').on('input', function(validationCep) {
+            let inputElement = document.getElementById("input-cep");
+            const feedback = inputElement.nextElementSibling;
+
             let inputValue = document.getElementById("input-cep").value;
-            inputValue = inputValue.replace(/\D/g, ""); // Remove todos os caracteres não numéricos
-            if (inputValue.length >= 5) {
-              inputValue = inputValue.slice(0, 5) + "-" + inputValue.slice(5, 8);
+
+            if (inputValue.length !== 9) {
+                inputElement.classList.add("is-invalid");
+                feedback.style.display = "block";
+            }else{
+                inputElement.classList.remove("is-invalid");
+                feedback.style.display = "none";
             }
-            this.value = inputValue;
-          });
+        });
 
         // Evento ao clicar no botão Salvar
         document.getElementById("my-profile-form").addEventListener("submit", function (event) {
@@ -80,15 +103,14 @@ let main = function() {
             let height = document.getElementById("input-height").value;
             let wheight = document.getElementById("input-wheight").value;
             let cep = document.getElementById("input-cep").value;
-            let city = document.getElementById("input-city").value;
-            let state = document.getElementById("input-state").value;
     
 
             // Validação do Formulário
     
               // Corrigindo o fuso horário da Data
               let date = new Date(inputDate);
-              date.setUTCHours(date.getUTCHours() + 3);
+              date = date.toISOString().split('T')[0];
+              //date.setUTCHours(date.getUTCHours() + 3);
 
               // Descobrindo a Idade
               let birthday = new Date(date);
@@ -102,8 +124,33 @@ let main = function() {
               let inputAge = document.getElementById("input-age");
               inputAge.value = age;
 
-              // TODO Pegar a cidade e estado da API Via CEP
+              // Coloca a Cidade buscada no via CEP para o input-city
+              async function updateCity() {
+                let cep = document.getElementById("input-cep").value;
+                // Remover o "-" da string do CEP
+                cep = cep.replace(/\D/g, '');
 
+                const city = await UserService.getCityFromCep(cep);
+                document.getElementById("input-city").value = city;
+                
+                // Atualizando o objeto
+                user[0].city = city;
+              }
+              updateCity(); // Chama a função para buscar a cidade
+
+              // Coloca o Estado buscado no via CEP para o input-state
+              async function updateUf() {
+                let cep = document.getElementById("input-cep").value;
+                // Remover o "-" da string do CEP
+                cep = cep.replace(/\D/g, '');
+
+                const state = await UserService.getUfFromCep(cep);
+                document.getElementById("input-state").value = state;
+
+                // Atualizando o Estado no Objeto
+                user[0].state = state;
+              }
+              updateUf(); // Chama a função para buscar o estado
 
 
             // Checando a validade das informações
@@ -128,8 +175,6 @@ let main = function() {
                     existingPopover.dispose();
                 }
 
-                // TODO exibir as informações nos inputs
-
                 // Atualizando a Classe User
                 user[0].name = name;
                 user[0].birthday = birthday;
@@ -137,29 +182,12 @@ let main = function() {
                 user[0].height = height;
                 user[0].wheight = wheight;
                 user[0].cep = cep;
-                user[0].city = city;
-                user[0].state = state;
 
                 // Salvando no local storage
                 localStorage.setItem("users", JSON.stringify(user));
 
-                // Selecionando a Div userData
-                let userData = document.querySelector("#userData");
-
-                // Utilizando o innerHTML para adicionar a div
-                userData.innerHTML = `
-                    <h2> Dados do Usuário </h2>
-                    <p>Username: ${user[0].username}</p>
-                    <p>Password: ${user[0].password}</p>
-                    <p>Nome: ${user[0].name}</p>
-                    <p>Data de Nascimento: ${user[0].birthday}</p>
-                    <p>Idade: ${user[0].age}</p>
-                    <p>Altura: ${user[0].height}</p>
-                    <p>Peso: ${user[0].wheight}</p>
-                    <p>CEP: ${user[0].cep}</p>
-                    <p>Cidade: ${user[0].city}</p>
-                    <p>Estado: ${user[0].state}</p>
-                `;
+                // Mostra e esconde o Alert de sucesso com jquery
+                $('#sucessAlert').fadeIn('slow').delay(3000).fadeOut('slow');
             }
         });
         
