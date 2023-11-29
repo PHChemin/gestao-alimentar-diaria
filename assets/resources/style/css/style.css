@@ -53,6 +53,14 @@ h3{
     
 }
 
+.image-with-text {
+    background-image: url("https://res.cloudinary.com/dxcxdt9gh/image/upload/v1698254423/adc-ref_iw6g9v.jpg");
+    height: 70vh;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
 
 @media (min-width: 764px) {
     .bloco {
