@@ -82,53 +82,43 @@
                 </div>
             </div>
             <div class="container mt-5">
-                <form id="add-meal-form" class="row g-5 needs-validation" novalidate>
-                    <div class="col-md-4 col-sm-3">
+                <form id="add-meal-form" class="row g-5">
+                    <div class="col-md-4">
                         <h2><label for="input-day" class="form-label fs-3">Dia da Refeição</label> <span class="text-danger">*</span></h2>
-                      <input id="input-day" type="date" class="form-control" placeholder="dd/mm/aaaa" min="2023-01-01" max="2023-12-31">
+                      <input id="input-day" type="date" class="form-control" placeholder="dd/mm/aaaa" min="2023-01-01" max="2023-12-31" required>
                       <div id="day-help" class="form-text">Clique no calendário ao lado.</div>
                     </div>
-                    <div class="col-md-4 col-sm-6">
-                        <h2 class="fs-3">Refeição <span class="text-danger">*</span></h2>
+                    
+                    <div class="col-md-8"></div>
 
-                        <div class="breakfast mb-2">
-                            <input id="breakfast-radio" class="form-check-input" type="radio" name="meal-type">
-                            <label for="breakfast-radio" class="form-check-label">
-                            Café da Manhã
-                            </label>
-                        </div>
-                        
-                        <div class="lunch mb-2">
-                            <input id="lunch-radio" class="form-check-input" type="radio" name="meal-type">
-                            <label for="lunch-radio" class="form-check-label">
-                            Almoço
-                            </label>
-                        </div>
+                    <div class="col-md-6">
+                      <h2 class="fs-3">Café da Manhã <span class="text-danger">*</span></h2>
+                      <input id="input-breakfast" placeholder="Calorias (cal)" type="text" class="form-control" pattern="[0-9]*" required>
+                      <span class="text-danger"></span>
+                      <div id="breakfast-help" class="form-text">Coloque o total calorias ingerido no Café da Manhã.</div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                      <h2 class="fs-3">Almoço<span class="text-danger">*</span></h2>
+                      <input id="input-lunch" placeholder="Calorias (cal)" type="text" class="form-control" pattern="[0-9]*" required>
+                      <span class="text-danger"></span>
+                      <div id="lunch-help" class="form-text">Coloque o total calorias ingerido no Almoço.</div>
+                    </div>
 
-                        <div class="dinner mb-2">
-                            <input id="dinner-radio" class="form-check-input" type="radio" name="meal-type">
-                            <label for="dinner-radio" class="form-check-label">
-                            Janta
-                            </label>
-                        </div>
-                        
-                        <div class="other-meals">
-                            <input id="other-radio" class="form-check-input" type="radio" name="meal-type">
-                            <label for="other-radio" class="form-check-label">
-                            Outras Refeições
-                            </label>
-                        </div>
+                    <div class="col-md-6">
+                      <h2 class="fs-3">Janta <span class="text-danger">*</span></h2>
+                      <input id="input-dinner" placeholder="Calorias (cal)" type="text" class="form-control" pattern="[0-9]*" required>
+                      <span class="text-danger"></span>
+                      <div id="dinner-help" class="form-text">Coloque o total calorias ingerido na Janta.</div>
                     </div>
-                    <div class="col-md-4 col-sm-3">
-                        <label for="input-cal" class="form-label fs-3">Calorias <span class="text-danger">*</span></label>
-                        <input id="input-cal" placeholder="Calorias (kcal)" type="text" class="form-control">
-                        <div class="invalid-feedback">Por favor coloque um número válido de calorias!</div>
-                        <div id="cal-help" class="form-text">Coloque o total de kilo calorias ingerido na refeição.</div>
+
+                    <div class="col-md-6">
+                      <h2 class="fs-3">Outras Refeições <span class="text-danger">*</span></h2>
+                      <input id="input-other" placeholder="Calorias (cal)" type="text" class="form-control" pattern="[0-9]*" required>
+                      <span class="text-danger"></span>
+                      <div id="other-help" class="form-text">Coloque o total calorias ingerido em outras refeições do dia.</div>
                     </div>
-                    <div class="col-md-8">
-                        <label for="input-annotation" class="form-label fs-3">Anotações</label>
-                        <input id="input-annotation" type="text" class="form-control" minlength="1" maxlength="300" placeholder="Faça aqui, anotações sobre sua refeição!">
-                    </div>
+
                     <div class="col-12 text-center mt-4 mb-5">
                         <button id="add-meal-button" class="btn btn-lg btn-success text-light" type="submit">Adicionar</button>
                     </div>
@@ -171,6 +161,6 @@
         <script src="../../../assets/resources/script/bootstrap.bundle.min.js"></script>
         <script src="../../../node_modules/jquery/dist/jquery.min.js"></script>
         <script src="../../../node_modules/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
-        
+        <script type="module" src="./addmeals.js"></script>
     </body>
 </html>

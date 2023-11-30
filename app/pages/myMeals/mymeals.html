@@ -11,9 +11,9 @@
         <link href="../../../assets/resources/icons/bootstrap-icons.min.css" rel="stylesheet">
         <link href="../../../assets/resources/style/css/custom.css" rel="stylesheet">
         <link href="../../../assets/resources/style/css/style.css" rel="stylesheet"> 
-        <title>Perfil GAD</title>
+        <title>My Meals GAD</title>
     </head>
-    <body>
+    <body class="d-flex flex-column vh-100">
         <header class="overflow-x-hidden shadow">
             <nav class="navbar bg-primary sticky-md-top">
                 <div class="conteiner text-center">
@@ -30,13 +30,13 @@
                           </div>
                           <div class="offcanvas-body">
                               <div class="itens">
-                                <a href="../index.html" class="text-start d-flex">
+                                <a href="./index.html" class="text-start d-flex">
                                   <i class="bi bi-star-fill fs-4 text-light me-3"></i>
                                   <p class="fs-3 text-light text-decoration-none">Início</p>
                                 </a>
                               </div>
                               <div class="itens">
-                                <a href="./perfil.html" class="text-start d-flex">
+                                <a href="./app/perfil.html" class="text-start d-flex">
                                   <i class="bi bi-person-fill fs-4 text-light me-3"></i>
                                   <p class="fs-3 text-light text-decoration-none">Meu Perfil</p>
                                 </a>
@@ -66,84 +66,63 @@
                         <h1 class="logo">Gad</h1>
                     </div>
                     <div class="col">
+                        <a href=""><i class="bi bi-person-circle text-dark fs-2"></i></i></a>
                     </div>
                   </div>
                 </div>
             </nav>
         </header>
-        <main>
-            <div class="d-flex justify-content-center align-items-center mt-4">
-                <div class="title-top fst-italic fw-medium">Meu Perfil</div>
-                <i class="bi bi-person-circle text-dark fs-1 ms-3"></i>
+        <main class="flex-fill">
+            <div class="d-flex justify-content-center align-items-center mt- mb-4">
+                <div class="title-top fst-italic fw-medium">Minhas Refeições</div>
+                <i class="bi bi-bookmark-heart text-dark fs-1 ms-3"></i>
             </div>
-            <div class="container text-end">
-              <button id="clearForm" class="btn btn-sm btn-primary text-light" type="button">Limpar</button>
-            </div>
+
             <div class="container">
-                <form id="my-profile-form" class="row g-3 needs-validation" novalidate>
-                    <div class="col-md-6">
-                      <label for="input-user" class="form-label fs-3">Usuário</label>
-                      <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">@</span>
-                        <input id="input-user" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" readonly>
-                      </div>
-                      <div class="invalid-feedback">Preencha corretamente</div>
+                <div id="tables-area" class="row">
+                    <div class="col-md-4">
+                        <table class="table table-striped table-full-width border border-primary text-center">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">
+                                        <h3 class="m-0">Dia 30/11/2023</h3>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Refeição</th>
+                                    <th>Calorias</th>
+                                </tr>
+                                <tr class="table-success">
+                                    <td scope="row">Café da Manhã</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Almoço</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Janta</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">Outras Refeições</td>
+                                    <td>200</td>
+                                </tr>
+                                <tr>
+                                    <td class="fs-3 fw-bold" scope="row" class="border-end border-primary">Total</td>
+                                    <td class="fs-3 fw-bold">800</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="col-md-6">
-                        <label for="input-password" class="form-label fs-3">Senha</label>
-                        <input type="password" class="form-control" id="input-password" readonly>
-                    </div>
-                    <div class="col-md-6 col-sm-12 mt-4">
-                        <label for="input-name" class="form-label fs-3">Nome</label>
-                        <input type="text" class="form-control" id="input-name" minlength="1" autofocus>
-                        <div class="invalid-feedback"> Por favor preencha o nome corretamente.</div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mt-4">
-                      <label for="input-date" class="form-label fs-3">Data de Nascimento</label>
-                      <input type="date" class="form-control" id="input-date" placeholder="dd/mm/aaaa" min="1920-01-01" max="2023-01-01">
-                      <div id="dateHelp" class="form-text">Clique no calendário ao lado.</div>
-                  </div>
-                    <div class="col-md-3 col-sm-6 mt-4">
-                        <label for="input-age" class="form-label fs-3">Idade</label>
-                        <input type="number" class="form-control" id="input-age" placeholder="Anos" readonly>
-                    </div>
-                    <div class="col-md-6 mt-4">
-                        <label for="input-height" class="form-label fs-3">Altura</label>
-                        <input placeholder="Em centímetros (cm)" type="number" class="form-control" id="input-height" min="1" max="300">
-                        <div class="invalid-feedback"> Por favor infome uma altura dentro do limite (1-300 cm).</div>
-                    </div>
-                    <div class="col-md-6 mt-4">
-                        <label for="input-wheight" class="form-label fs-3">Peso</label>
-                        <input placeholder="Em kilogramas (kg)" type="number" class="form-control" id="input-wheight">
-                        <div class="invalid-feedback">Por favor infome um peso dentro do limite (1-800 kg).</div>
-                    </div>
-                    <div class="col-md-3 mt-4">
-                        <label for="input-cep" class="form-label fs-3">CEP</label>
-                        <input type="text" class="form-control" id="input-cep" pattern="\d{5}-\d{3}" placeholder="00000-000">
-                        <div class="invalid-feedback">Por favor escreva um CEP Válido.</div>
-                      </div>
-                    <div class="col-md-6 mt-4">
-                      <label for="input-city" class="form-label fs-3">Cidade</label>
-                      <input type="text" class="form-control" id="input-city" readonly>
-                    </div>
-                    <div class="col-md-3 mt-4">
-                      <label for="input-state" class="form-label fs-3">Estado</label>
-                      <input type="text" class="form-control" id="input-state" readonly>
-                    </div>
-                    <div class="col-12 col-sm-8 col-md-6 m-auto mt-3">
-                      <div id="sucessAlert" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
-                          <div class="text-center">
-                            Seu Perfil foi salvo com sucesso!
-                          </div>
-                      </div>
-                    </div>
-                    <div class="col-12 text-center mt-3 mb-5">
-                      <button id="save-form" class="btn btn-lg btn-danger text-light" type="submit">Salvar</button>
-                    </div>
-                  </form>
-              </div>
+
+                </div>
+            </div>
+            
         </main>
-        <footer class="container-fluid text-light bg-primary">
+        <footer class="container-fluid text-light bg-primary mt-auto">
             <div class="row justify-content-center pt-3">
               <section class="col-6 col-md-5">
                 <h5 class="text-light">Informações do Projeto</h5>
@@ -173,6 +152,6 @@
         <script src="../../../assets/resources/script/bootstrap.bundle.min.js"></script>
         <script src="../../../node_modules/jquery/dist/jquery.min.js"></script>
         <script src="../../../node_modules/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
-        <script type="module" src="./profile.js"></script>
+        <script type="module" src=""></script>
     </body>
 </html>

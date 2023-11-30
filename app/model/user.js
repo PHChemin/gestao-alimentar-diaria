@@ -11,5 +11,4 @@ export class User {
         this.city = city;
         this.state = state;
     }
-
 }
