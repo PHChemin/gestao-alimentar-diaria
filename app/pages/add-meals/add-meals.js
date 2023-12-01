@@ -120,6 +120,12 @@ let main = function () {
 
             // Chamamos o método de salvamento da classe MealService
             mealService.savedLocal(meal);
+
+            // Mostra e esconde o Alert de sucesso com jquery
+            $('#sucessAlert').fadeIn('slow').delay(3000).fadeOut('slow');
+
+            // Limpando os campos após adicionar e aparecer a mensagem de Sucesso
+            this.reset();
         });
     });
 }
