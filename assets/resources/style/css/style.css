@@ -61,6 +61,17 @@ h3{
     background-size: cover;
 }
 
+.image-with-text-2 {
+    background-image: url("https://res.cloudinary.com/dxcxdt9gh/image/upload/v1701567164/img-compador_keg7h0.jpg");
+    height: 70vh;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.x-comparator{
+    font-size: 8rem;
+}
 
 @media (min-width: 764px) {
     .bloco {
