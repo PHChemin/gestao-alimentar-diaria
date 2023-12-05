@@ -53,4 +53,4 @@ RA5 - Efetuar requisições assíncronas para uma API fake e APIs públicas, per
   - Comando: `npm i` 
 - Executar o Json Server
   - Comando: `npm start`
-  - Acessar: Link gerado pelo terminal (seuip:3000/users)
+  - Acessar: http://localhost:3000/users
