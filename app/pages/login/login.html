@@ -10,7 +10,7 @@
         <link href="../../../node_modules/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet">
         <link href="../../../assets/resources/style/css/custom.css" rel="stylesheet">
         <link href="../../../assets/resources/style/css/style.css" rel="stylesheet"> 
-        <title>Registro Gad</title>
+        <title>Login Gad</title>
     </head>
     <body>
         <main>
@@ -21,18 +21,20 @@
                             <div class="logo mt-4 mb-2 border-bottom border-2 border-primary">Gad</div>
                         </div>
                         <h2 class="text-center mt-3 mb-3">Bem-vindo de Volta!</h2>
-                        <form>
+                        <form id="login-form">
                             <div class="mb-3">
                                 <label for="input-username" class="form-label fs-3">Logar</label>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1">@</span>
                                     <input id="input-username" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" placeholder="Usuário">
+                                    <div class="invalid-feedback">Usuário não encontrado!</div>
                                 </div>
                             </div>
                             <div class="mb-3 mt-2">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1">@</span>
                                     <input id="input-password" type="password" class="form-control" aria-label="Username" aria-describedby="basic-addon1" placeholder="Senha">
+                                    <div class="invalid-feedback">Senha incorreta!</div>
                                 </div>
                             </div>
                             <div class="mb-3 form-check">
@@ -40,7 +42,7 @@
                                 <label class="form-check-label" for="exampleCheck1">Lembrar de Mim</label>
                               </div>
                             <div class="text-end mt-3 mb-3">
-                                <button type="submit" class="btn btn-lg btn-danger text-light">Entrar</button>
+                                <button id="login-button" type="submit" class="btn btn-lg btn-danger text-light">Entrar</button>
                             </div>
                             <p class="mb-5">Ainda possui Cadastrado? Cadastre-se clicando <a href="../register/register.html">Aqui!</a></p>
                         </form>
@@ -50,6 +52,7 @@
             </div>
         </main>
         
-        <script src="../../../assets/resources/script/bootstrap.bundle.min.js"></script> 
+        <script src="../../../assets/resources/script/bootstrap.bundle.min.js"></script>
+        <script type="module" src="./login.js"></script>
     </body>
 </html>

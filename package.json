@@ -4,15 +4,16 @@
   "description": "Este projeto tem como objetivo ajudar as pessoas a terem um melhor controle de sua alimentação. Com o uso da ferramenta GAD (Gestão Alimentar Diária) será possível para o usuário salvar suas alimentações (ex: café da manhã, almoço, janta, etc) conforme os dias e posteriormente compara-los. Assim obtendo uma visão melhor sobre sua alimentação e consequentemente ajudando a saúde do usuário.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "json-server --watch db.json --port 3000"
   },
   "keywords": [],
   "author": "Pedro Henrique Chemin Prado",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.3.1",
     "bootstrap-icons": "^1.11.1",
     "jquery": "^3.7.1",
-    "jquery-mask-plugin": "^1.14.16"
+    "jquery-mask-plugin": "^1.14.16",
+    "json-server": "^0.17.4"
   }
 }
