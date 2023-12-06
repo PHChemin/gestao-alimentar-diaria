@@ -103,16 +103,16 @@ let main = function () {
             // dayFormatted vai para o objeto
 
             // Pegando as calorias do BREAKFAST
-            const breakfast = document.getElementById("input-breakfast").value;
+            const breakfast = parseInt(document.getElementById("input-breakfast").value);
 
             // Pegando as calorias do LUNCH
-            const lunch = document.getElementById("input-lunch").value;
+            const lunch = parseInt(document.getElementById("input-lunch").value);
 
             // Pegando as calorias do DINNER
-            const dinner = document.getElementById("input-dinner").value;
+            const dinner = parseInt(document.getElementById("input-dinner").value);
 
             // Pegando as calorias do OTHER MEALS
-            const otherMeals = document.getElementById("input-other").value;
+            const otherMeals = parseInt(document.getElementById("input-other").value);
 
             
             // Agora Instanciamos a classe Meal

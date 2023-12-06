@@ -93,7 +93,7 @@ let main = function() {
                 document.querySelector('#lunch-table-1').textContent = meals[idMeal1].lunch;
                 document.querySelector('#dinner-table-1').textContent = meals[idMeal1].dinner;
                 document.querySelector('#other-table-1').textContent = meals[idMeal1].otherMeals;
-                const total1 = parseInt(meals[idMeal1].breakfast) + parseInt(meals[idMeal1].lunch) + parseInt(meals[idMeal1].dinner) + parseInt(meals[idMeal1].otherMeals);
+                const total1 = meals[idMeal1].breakfast + meals[idMeal1].lunch + meals[idMeal1].dinner + meals[idMeal1].otherMeals;
                 document.querySelector('#total-table-1').textContent = total1;
 
                 // atualizando a segunda
@@ -102,7 +102,7 @@ let main = function() {
                 document.querySelector('#lunch-table-2').textContent = meals[idMeal2].lunch;
                 document.querySelector('#dinner-table-2').textContent = meals[idMeal2].dinner;
                 document.querySelector('#other-table-2').textContent = meals[idMeal2].otherMeals;
-                const total2 = parseInt(meals[idMeal2].breakfast) + parseInt(meals[idMeal2].lunch) + parseInt(meals[idMeal2].dinner) + parseInt(meals[idMeal2].otherMeals);
+                const total2 = meals[idMeal2].breakfast + meals[idMeal2].lunch + meals[idMeal2].dinner + meals[idMeal2].otherMeals;
                 document.querySelector('#total-table-2').textContent = total2;
 
                 // Verificando qual o filtro aplicado

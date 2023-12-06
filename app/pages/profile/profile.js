@@ -6,22 +6,24 @@ let main = function() {
 
         // Carregando o Usuário Salvo Anteriormente
         let savedUser = localStorage.getItem("users");
-        let user = JSON.parse(savedUser);
+        let users = JSON.parse(savedUser);
+        let user = users[0];
 
         // Colocando usuário e senha no input
-        document.getElementById("input-user").value = user[0].username;
-        document.getElementById("input-password").value = user[0].password;
+        document.getElementById("input-user").value = user.username;
+        document.getElementById("input-password").value = user.password;
 
-        if (user && user.length > 0) {
+        if (users && users.length > 0) {
             // Carregando as informações salvas do usuário apenas se o usuário existir e houver informações
-            document.getElementById("input-name").value = user[0].name || '';
-            document.getElementById("input-user").value = user[0].username || '';
-            document.getElementById("input-age").value = user[0].age || '';
-            document.getElementById("input-height").value = user[0].height || '';
-            document.getElementById("input-wheight").value = user[0].wheight || '';
-            document.getElementById("input-cep").value = user[0].cep || '';
-            document.getElementById("input-city").value = user[0].city || '';
-            document.getElementById("input-state").value = user[0].state || '';
+            document.getElementById("input-name").value = user.name || '';
+            document.getElementById("input-user").value = user.username || '';
+            document.getElementById("input-date").value = user.birthday || '';
+            document.getElementById("input-age").value = user.age || '';
+            document.getElementById("input-height").value = user.height || '';
+            document.getElementById("input-wheight").value = user.wheight || '';
+            document.getElementById("input-cep").value = user.cep || '';
+            document.getElementById("input-city").value = user.city || '';
+            document.getElementById("input-state").value = user.state || '';
         }
 
 
@@ -108,15 +110,16 @@ let main = function() {
             // Validação do Formulário
     
               // Corrigindo o fuso horário da Data
+              let birthday = inputDate;
               let date = new Date(inputDate);
               date = date.toISOString().split('T')[0];
               //date.setUTCHours(date.getUTCHours() + 3);
 
               // Descobrindo a Idade
-              let birthday = new Date(date);
+              date = new Date(date);
               let currentDate = new Date();
-              let age = currentDate.getFullYear() - birthday.getFullYear();
-              if (currentDate.getMonth() < birthday.getMonth() || (currentDate.getMonth() === birthday.getMonth() && currentDate.getDate() < birthday.getDate())) {
+              let age = currentDate.getFullYear() - date.getFullYear();
+              if (currentDate.getMonth() < date.getMonth() || (currentDate.getMonth() === date.getMonth() && currentDate.getDate() < date.getDate())) {
                 age--;
               }
     
@@ -134,7 +137,7 @@ let main = function() {
                 document.getElementById("input-city").value = city;
                 
                 // Atualizando o objeto
-                user[0].city = city;
+                user.city = city;
               }
               updateCity(); // Chama a função para buscar a cidade
 
@@ -148,7 +151,7 @@ let main = function() {
                 document.getElementById("input-state").value = state;
 
                 // Atualizando o Estado no Objeto
-                user[0].state = state;
+                user.state = state;
               }
               updateUf(); // Chama a função para buscar o estado
 
@@ -176,15 +179,19 @@ let main = function() {
                 }
 
                 // Atualizando a Classe User
-                user[0].name = name;
-                user[0].birthday = birthday;
-                user[0].age = age;
-                user[0].height = height;
-                user[0].wheight = wheight;
-                user[0].cep = cep;
+                user.name = name;
+                user.birthday = birthday;
+                user.age = age;
+                user.height = height;
+                user.wheight = wheight;
+                user.cep = cep;
+                user.city = document.getElementById('input-city').value;
+                user.state = document.getElementById('input-state').value;
+
+                users[0] = user;
 
                 // Salvando no local storage
-                localStorage.setItem("users", JSON.stringify(user));
+                localStorage.setItem("users", JSON.stringify(users));
 
                 // Mostra e esconde o Alert de sucesso com jquery
                 $('#sucessAlert').fadeIn('slow').delay(3000).fadeOut('slow');
