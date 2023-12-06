@@ -6,7 +6,7 @@ O frontend da aplicação foi desenvolvido com Html, css,framework Bootstrap e J
 
 ## Endereço de Deploy - GitHub Pages
 
-adicionar depois
+https://phchemin.github.io/gestao-alimentar-diaria/index.html
 
 ## Protótipo
 
@@ -26,7 +26,7 @@ RA1 - Utilizar Frameworks CSS para estilização de elementos HTML e criação d
 RA2 - Realizar tratamento de formulários e aplicar validações customizadas no lado cliente, utilizando a API do HTML e expressões regulares (REGEX).
   - [X] ID 18 - Implementa tratamento de formulários no lado cliente com apresentação de mensagens de erro ou sucesso, utilizando os recursos da API do HTML, como        validação de campos obrigatórios, tipo de entrada e limites de caracteres, garantindo que os dados inseridos sejam válidos antes de serem enviados para o servidor.
   - [X] ID 19 - Aplica expressões regulares (REGEX) de forma eficiente para realizar validações customizadas nos campos de formulários, como formatos específicos de e-  mail, telefone, data ou outros padrões personalizados definidos pelos requisitos do projeto.
-  - [ ] ID 20 - Incorpora elementos de listagem, como checkbox, radio ou select, de maneira eficiente em formulários web, possibilitando a seleção e coleta precisa de   dados  pelos usuários.
+  - [X] ID 20 - Incorpora elementos de listagem, como checkbox, radio ou select, de maneira eficiente em formulários web, possibilitando a seleção e coleta precisa de   dados  pelos usuários.
   - [X] ID 22 - Realiza a escrita e leitura de dados no Web Storage, permitindo a persistência de informações entre sessões de usuário e fornecendo uma maneira eficaz   de armazenar dados localmente no navegador.
 
 RA3 - Aplicar ferramentas para otimização do processo de desenvolvimento web, incluindo Node.js, NPM e linters para garantir a qualidade do código, juntamento com boas práticas de versionamento e organização de projetos.
@@ -43,11 +43,14 @@ RA4 - Aplicar bibliotecas de funções e componentes em JavaScript para aprimora
 
 
 RA5 - Efetuar requisições assíncronas para uma API fake e APIs públicas, permitindo a obtenção e manipulação de dados dinamicamente.
-  - [X] ID 21 - Realiza requisições assíncronas para uma API fake e APIs públicas, utilizando adequadamente conceitos como AJAX, Fetch API ou bibliotecas, para obter      dados dinâmicos e realizar a manipulação e exibição dos resultados na página web.
+  - [X] ID 21 - Realiza requisições assíncronas para uma API fake e/ou APIs públicas, utilizando adequadamente conceitos como AJAX, Fetch API ou bibliotecas, para obter dados dinâmicos e realizar a manipulação e exibição dos resultados na página web.
 
 ## Manual de execução
 - Clonar o repositório com `git clone`
 - Abrir o projeto no editor Visual Studio Code (VS Code)
 - Abrir um terminal pelo VSCode ou qualquer terminal do seu Sistema Operacional apontando para o diretório raiz do projeto 
 - Instalar as dependências contidas no `package.json`
-  - Comando: `npm i`
+  - Comando: `npm i` 
+- Executar o Json Server
+  - Comando: `npm start`
+  - Acessar: http://localhost:3000/users
